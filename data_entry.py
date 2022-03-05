@@ -30,7 +30,7 @@ def details():
         writer = csv.writer(f)
         writer.writerow([id, name, dob, sex, address])
 
-    qrcode = pyqrcode.create(id-1)
+    qrcode = pyqrcode.create(id)
     filename = 'qrcodes/' + str(id) + '.png'
     qrcode.png(filename, scale = 10)
 
