@@ -4,7 +4,7 @@ def main(id, name, sex, age, address, date, time, department, room_no):
     class PDF(FPDF):
         def header(self):
             self.set_font('helvetica', 'B', 20)
-            self.set_fill_color(255, 255, 255)
+            self.set_fill_color(206, 241, 149)
             self.set_line_width(1)
         
             self.cell(0, 10, 'Smart Hospital', border=True, align='C', fill=True)
@@ -13,7 +13,7 @@ def main(id, name, sex, age, address, date, time, department, room_no):
         def edits(self, name, sex, age, address, date, time, department, room_no):
             self.add_page()
             self.set_font('helvetica', '', 12)
-            self.set_fill_color(255, 255, 255)
+            self.set_fill_color(206, 241, 149)
             self.set_line_width(1)
             self.cell(100, 10, f'Name: {name}', fill=True, border=True)
             self.cell(96, 10, f'Sex: {sex}', fill=True, border=True)
@@ -38,7 +38,7 @@ def main(id, name, sex, age, address, date, time, department, room_no):
             self.set_y(-15)
             self.set_font('helvetica', '', 12)
             self.set_line_width(1)
-            self.set_fill_color(255, 255, 255)
+            self.set_fill_color(206, 241, 149)
             self.cell(0, 12, 'Case Seen By: ', border=True, fill=True)
 
 

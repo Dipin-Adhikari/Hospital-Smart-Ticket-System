@@ -30,24 +30,27 @@ while True:
                 sex = data.loc[i]['Sex']
                 dob = data.loc[i]['DOB']
                 address = data.loc[i]['Address']
+            
         
-        birthdate = dob.split('/')
-        print(birthdate)
-        today = date.today()
-        age = (today.year - int(birthdate[2])) - ((today.month, today.day) < (int(birthdate[0]), int(birthdate[1])))
+                birthdate = dob.split('/')
+                print(birthdate)
+                today = date.today()
+                age = (today.year - int(birthdate[2])) - ((today.month, today.day) < (int(birthdate[0]), int(birthdate[1])))
 
-        now = time.localtime()
-        current_time = time.strftime("%H:%M:%S", now)
+                now = time.localtime()
+                current_time = time.strftime("%H:%M:%S", now)
 
-        gui.main()
-        file = open("department.txt", "r")
-        department = file.read()
-        room_no = room_dict[department]
+                gui.main()
+                file = open("department.txt", "r")
+                department = file.read()
+                room_no = room_dict[department]
 
-        pdf.main(pin, name, sex, age, address, today, current_time, department, room_no)
+                pdf.main(pin, name, sex, age, address, today, current_time, department, room_no)
 
-        filename = name + pin + '.jpg'
-        cv2.imwrite(filename, img)
+                filename = name + pin + '.jpg'
+                cv2.imwrite(filename, img)
+            else:
+                print("Your data are not entered in the database. Please enter to use.")
 
 
     cv2.imshow("Video", img)
